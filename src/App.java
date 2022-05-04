@@ -26,10 +26,7 @@ public class App {
         } while (choose != 3);
     }
     public static String[] growArray(String[] oldArray) {
-//        String[] newArray = new String[oldArray.length*2];
-//        for (int i = 0; i < oldArray.length; i++) {
-//            newArray[i] = oldArray[i];
-//        }
+
         return Arrays.copyOf(oldArray, oldArray.length*2);
     }
 }
