@@ -3,9 +3,8 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        int capacity = 2;
-        int size = 0;
-        String[] toDoList = new String[capacity];
+
+        DynamicArray toDoList = new DynamicArray(2);
         Scanner sc = new Scanner(System.in);
 
         int choose = 3;
@@ -15,18 +14,11 @@ public class App {
             if (choose == 1) {
                 System.out.println("Enter new todo");
                 sc.nextLine();
-                if (size >= capacity) {
-                    toDoList = growArray(toDoList);
-                    capacity = toDoList.length;
-                }
-                toDoList[size++] = sc.nextLine();
+                toDoList.add(sc.nextLine());
             } else if (choose == 2) {
-                System.out.println(Arrays.toString(toDoList));
+                System.out.println(toDoList);
             }
         } while (choose != 3);
     }
-    public static String[] growArray(String[] oldArray) {
 
-        return Arrays.copyOf(oldArray, oldArray.length*2);
-    }
 }
