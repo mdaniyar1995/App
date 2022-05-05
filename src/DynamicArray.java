@@ -20,6 +20,12 @@ public class DynamicArray {
         data[size++] = value;
     }
 
+    public Object get(int index) {
+        return data[index];
+    }
+
+
+
     private static Object[] grow(Object[] oldArray) {
 
         return Arrays.copyOf(oldArray, oldArray.length * 2);
